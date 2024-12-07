@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import Cookies from 'js-cookie'; 
 import * as Yup from 'yup'; 
 import { toast } from 'sonner';
+import Link from 'next/link';
 
 const validationSchema = Yup.object().shape({
   email: Yup.string()
@@ -87,12 +88,13 @@ const SignIn = () => {
         
         <button 
           onClick={handleSignIn}
-          className="w-full p-3 bg-indigo-600 rounded text-white hover:bg-indigo-500"
+          className="w-full p-3 bg-indigo-600 rounded mb-[10px] text-white hover:bg-indigo-500"
           disabled={loading} 
         >
           {loading ? 'Signing In...' : 'Sign In'}
         </button>
-        
+        <span className="text-white">Dont have account  
+  <Link href="/auth/signup" className="text-blue-500"> Register</Link></span>
         {error && (
           <p className="text-red-500 mt-4 text-center">{error}</p> 
         )}
