@@ -5,6 +5,7 @@ import { auth } from '@/app/firebase/config';
 import * as Yup from 'yup'; 
 import { useRouter } from 'next/navigation';
 import { toast } from 'sonner'; 
+import Link from 'next/link';
 
 const validationSchema = Yup.object().shape({
   email: Yup.string()
@@ -78,11 +79,12 @@ const SignUp = () => {
         
         <button 
           onClick={handleSignUp}
-          className="w-full p-3 bg-indigo-600 rounded text-white hover:bg-indigo-500"
+          className="w-full p-3 bg-indigo-600 rounded mb-[10px] text-white hover:bg-indigo-500"
         >
           Sign Up
         </button>
-
+<span className="text-white">All ready have account  
+  <Link href="/auth/signin" className="text-blue-500"> Login</Link></span>
         {error && (
           <p className="text-red-500 mt-4 text-center">{error}</p>
         )}

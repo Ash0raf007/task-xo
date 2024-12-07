@@ -57,13 +57,12 @@ const Header = () => {
           ) : (
             <>
               <Link href="/dashboard">
-                <li className="cursor-pointer hover:text-blue-500">Profile</li>
+                <li className="cursor-pointer text-blue-500 p-[10px] rounded-xl border hover:bg-blue-500 hover:text-white">Dashboard</li>
               </Link>
               <li>
                 <button
                   onClick={handleLogout}
-                  className="text-red-500 hover:text-red-700 transition duration-200"
-                >
+                  className="text-red-500 p-[10px] rounded-xl border hover:bg-red-700 hover:text-white transition duration-200"                >
                   Log out
                 </button>
               </li>
