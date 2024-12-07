@@ -5,6 +5,7 @@ import { auth } from '@/app/firebase/config';
 import { useRouter } from 'next/navigation';
 import Cookies from 'js-cookie'; 
 import * as Yup from 'yup'; 
+import { toast } from 'sonner';
 
 const validationSchema = Yup.object().shape({
   email: Yup.string()

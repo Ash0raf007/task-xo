@@ -5,6 +5,7 @@ import { signOut } from "firebase/auth";
 import { auth } from "@/app/firebase/config"; 
 import { useRouter } from "next/navigation"; 
 import { useEffect, useState } from "react"; 
+import { toast } from 'sonner'; 
 
 const Header = () => {
   const router = useRouter();
@@ -26,6 +27,8 @@ const Header = () => {
       Cookies.remove("user"); 
       setUser(null); 
       router.push("/auth/signin");
+      toast.success('Logout successfully!');
+
     } catch (error) {
       console.error("Error logging out:", error);
     }
